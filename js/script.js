@@ -108,17 +108,17 @@ class Tamagochi {
   }
 
   eat() {
-    this.food += (this.food <= 70) ? 30 : (100 - this.food); // this woun't make stat over 100 
+    this.food += (this.food <= (this.maxPoints - 30)) ? 30 : (this.maxPoints - this.food); // this woun't make stat over 100 or 70
     this.clean -= 20;
   }
 
   wash() {
-    this.clean += (this.clean <= 60) ? 40 : (100 - this.clean);
+    this.clean += (this.clean <= (this.maxPoints - 40)) ? 40 : (this.maxPoints - this.clean);
     this.happiness -= 10;
   }
 
   run() {
-    this.happiness += (this.happiness <= 85 ) ? 15 : (100 - this.happiness);
+    this.happiness += (this.happiness <= (this.maxPoints - 15)) ? 15 : (this.maxPoints - this.happiness);
     this.food -= 10;
   }
 
